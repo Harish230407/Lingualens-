@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Newsreader', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --bg-page: #0b0c10;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1, h2, .font-serif-display {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Code switch token highlight styling */
+.token-en {
+  color: #38bdf8;
+}
+.token-ta {
+  color: #f472b6;
+}
+.token-hi {
+  color: #fb923c;
+}
+.token-te {
+  color: #a78bfa;
+}
+.token-mixed {
+  color: #4ade80;
+}
+
+/* ==========================================================================
+   EDITORIAL LIGHT THEME SPECIFICATION
+   Full semantic transformation for light mode aesthetic
+   ========================================================================== */
+html[data-theme="light"],
+html.light,
+body[data-theme="light"],
+body.light {
+  --bg-page: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Main Views & App Containers */
+html[data-theme="light"] .bg-slate-950,
+html[data-theme="light"] .bg-\[\#0b0c10\],
+html[data-theme="light"] .bg-\[\#0e1017\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Header & Sidebar Bars */
+html[data-theme="light"] header,
+html[data-theme="light"] aside,
+html[data-theme="light"] .bg-\[\#0c0d12\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Cards, Modals & Surfaces */
+html[data-theme="light"] .bg-\[\#12141c\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Secondary Panels, Previews & Hover States */
+html[data-theme="light"] .bg-\[\#14161f\],
+html[data-theme="light"] .bg-\[\#161822\],
+html[data-theme="light"] .bg-\[\#181a24\] {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Text Hierarchy */
+html[data-theme="light"] .text-stone-100,
+html[data-theme="light"] .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .text-stone-200,
+html[data-theme="light"] .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .text-stone-300,
+html[data-theme="light"] .text-slate-300 {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .text-stone-400,
+html[data-theme="light"] .text-slate-400 {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .text-stone-500,
+html[data-theme="light"] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+/* White Borders -> Subtle Slate Borders */
+html[data-theme="light"] [class*="border-white"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Translucent White Chips & Backgrounds */
+html[data-theme="light"] [class*="bg-white\/[0\."] {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+html[data-theme="light"] [class*="hover\:bg-white\/[0\."]:hover {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Form Controls (Inputs, Selects, Textareas) */
+html[data-theme="light"] select,
+html[data-theme="light"] input[type="text"],
+html[data-theme="light"] input[type="number"],
+html[data-theme="light"] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Primary Action Buttons */
+html[data-theme="light"] .bg-stone-100 {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .bg-stone-100:hover {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .bg-stone-100 svg {
+  stroke: #ffffff !important;
+}
+
+html[data-theme="light"] .fill-stone-900 {
+  fill: #ffffff !important;
+}
+
+/* Chat Message Bubbles */
+html[data-theme="light"] .group.bg-\[\#181a24\] {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] .group.bg-\[\#12141c\] {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Chat Sticky Companion Header */
+html[data-theme="light"] .sticky.bg-slate-950\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Ambient glow gradient in ChatView */
+html[data-theme="light"] .bg-gradient-to-t.from-blue-900\/15 {
+  background: linear-gradient(to top, rgba(219, 234, 254, 0.6), rgba(238, 242, 255, 0.2), transparent) !important;
+}
+
+/* Interactive 3D Card light mode adjustments */
+html[data-theme="light"] .shadow-2xl,
+html[data-theme="light"] .shadow-xl {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Light Mode Scrollbar */
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Settings and Nested Surface Controls in Light Mode */
+html[data-theme="light"] .bg-\[\#12141c\] .bg-\[\#0b0c10\],
+html[data-theme="light"] .bg-white .bg-\[\#0b0c10\] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .border-white\/\[0\.08\],
+html[data-theme="light"] .border-white\/\[0\.06\],
+html[data-theme="light"] .border-white\/\[0\.1\] {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .bg-blue-500\/10,
+html[data-theme="light"] .bg-blue-500\/15 {
+  background-color: #eff6ff !important;
+  color: #1e3a8a !important;
+}
+
